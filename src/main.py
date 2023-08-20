@@ -1,6 +1,10 @@
 import apache_beam as beam
 from apache_beam.runners.render import RenderRunner
+from apache_beam.runners import DirectRunner, DataflowRunner
+
 import csv
+
+from arg import get_args
 
 
 def mapToDict(elem: str) -> dict:
@@ -25,12 +29,23 @@ def mapToCSVRow(elem: dict) -> str:
     return ",".join(f'"{v}"' for k, v in elem.items())
 
 
-def run():
-    # runner = RenderRunner()
-    runner = "DirectRunner"
+runner_options = {
+    "local": DirectRunner(),
+    "graph": RenderRunner(),
+    "gcp": DataflowRunner(),
+}
+
+
+def get_runner_with_options(args):
+    runner = runner_options.get(args.runner)
     options = beam.options.pipeline_options.PipelineOptions(
         save_main_session=True, streaming=False
     )
+    return runner, options
+
+
+def run(args):
+    runner, options = get_runner_with_options(args)
     with beam.Pipeline(runner=runner, options=options) as pipe:
         out = (
             pipe
@@ -47,4 +62,6 @@ def run():
 
 
 if __name__ == "__main__":
-    run()
+    args = get_args()
+    print(args)
+    run(args)
