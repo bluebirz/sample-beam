@@ -1,7 +1,11 @@
 import apache_beam as beam
-from apache_beam.runners.direct.direct_runner import DirectRunner
+from apache_beam.runners.render import RenderRunner
+from apache_beam.runners.direct.direct_runner import SwitchingDirectRunner
+from apache_beam.runners import DataflowRunner
 
 import csv
+
+from arg import get_args
 
 
 def mapToDict(elem: str) -> dict:
@@ -23,14 +27,28 @@ def mapToDict(elem: str) -> dict:
 
 
 def mapToCSVRow(elem: dict) -> str:
-    return ",".join(f'"{v}"' for _, v in elem.items())
+    return ",".join(f'"{v}"' for k, v in elem.items())
 
 
-def run_beam_local():
+runner_choices = {
+    "local": SwitchingDirectRunner(),
+    "graph": RenderRunner(),
+    "gcp": DataflowRunner(),
+}
+
+
+def get_runner_with_options(args):
+    runner = runner_choices.get(args.runner)
     options = beam.options.pipeline_options.PipelineOptions(
         save_main_session=True, streaming=False
     )
-    with beam.Pipeline(runner=DirectRunner(), options=options) as pipe:
+    print(options.__dict__)
+    return runner, options
+
+
+def run(args):
+    runner, options = get_runner_with_options(args)
+    with beam.Pipeline(runner=runner, options=options) as pipe:
         out = (
             pipe
             | beam.io.ReadFromText("assets/mock.csv", skip_header_lines=1)
@@ -46,4 +64,6 @@ def run_beam_local():
 
 
 if __name__ == "__main__":
-    run_beam_local()
+    args = get_args()
+    print(args)
+    run(args)
