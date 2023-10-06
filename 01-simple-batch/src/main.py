@@ -1,6 +1,5 @@
 import apache_beam as beam
 from apache_beam.runners.direct.direct_runner import DirectRunner
-
 import csv
 
 
@@ -23,27 +22,22 @@ def mapToDict(elem: str) -> dict:
 
 
 def mapToCSVRow(elem: dict) -> str:
-    return ",".join(f'"{v}"' for _, v in elem.items())
+    return ",".join(f'"{v}"' for k, v in elem.items())
 
 
-def run_beam_local():
-    options = beam.options.pipeline_options.PipelineOptions(
-        save_main_session=True, streaming=False
-    )
-    with beam.Pipeline(runner=DirectRunner(), options=options) as pipe:
-        out = (
+def run_beam():
+    with beam.Pipeline(runner=DirectRunner()) as pipe:
+        (
             pipe
             | beam.io.ReadFromText("assets/mock.csv", skip_header_lines=1)
             | beam.Map(mapToDict)
             | beam.Filter(lambda l: l["gender"] == "F")
-        )
-        (out | beam.Map(print))
-        (
-            out
             | beam.Map(mapToCSVRow)
-            | beam.io.WriteToText("assets/processed.csv", shard_name_template="")
+            | beam.io.WriteToText(
+                "assets/processed.csv", shard_name_template=""
+            )  # write to file
         )
 
 
 if __name__ == "__main__":
-    run_beam_local()
+    run_beam()

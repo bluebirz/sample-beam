@@ -1,0 +1,5 @@
+# Beam
+apache-beam[gcp]
+
+# Editors
+black
