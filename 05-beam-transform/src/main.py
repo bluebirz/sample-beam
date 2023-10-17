@@ -32,6 +32,13 @@ def run_beam():
             | "Print all" >> beam.Map(print)
         )
 
+        (
+            all_records
+            | "Split occupation words"
+            >> beam.FlatMap(lambda l: l["occupation"].split())
+            | "Print words" >> beam.Map(print)
+        )
+
 
 # io.
 # Map
