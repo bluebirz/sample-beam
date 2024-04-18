@@ -46,7 +46,7 @@ pip install -r requirements.txt
 bq mk -d <output_dataset>
 ```
 
-4. Create Bigquery dataset as Beam temporary dataset.
+4. Create Bigquery dataset as Beam temporary dataset in same region as source table in the query. Otherwise, Beam will automatically create temporary dataset every time it runs.
 
 ```shell
 bq mk -d --location US <beam_temp_dataset>
@@ -100,7 +100,7 @@ python -m main \
 bq rm -r -f -d <output_dataset>
 ```
 
-- Delete Google Dataflow temporary dataset
+- Delete Beam temporary dataset
 
 ```shell
 bq rm -r -f -d <dataflow_temp_dataset>
