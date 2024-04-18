@@ -1,6 +1,4 @@
 import apache_beam as beam
-from apache_beam.runners.dataflow import DataflowRunner
-from apache_beam.runners.direct import DirectRunner
 import argparse
 from apache_beam.io.gcp.internal.clients.bigquery import DatasetReference
 
