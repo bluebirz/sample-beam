@@ -4,7 +4,7 @@
 
 - This repo is for demonstrating how to use Beam IO functions in Python.
 - It is written aside blogs described below.
-- This is part B : Google BigQuery.
+- This is part B : [Google BigQuery](https://cloud.google.com/bigquery).
 - This will query from Google BigQuery Public datasets [covid19_nyt](https://console.cloud.google.com/bigquery?p=bigquery-public-data&d=covid19_nyt&page=dataset).
 
 ## blog related
