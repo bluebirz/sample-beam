@@ -10,7 +10,7 @@ def run_beam():
     parser.add_argument("--output_table", type=str)
     parser.add_argument("--project", type=str)
     parser.add_argument("--temp_datasetId", type=str)  # same region as source query
-    args, sys_args = parser.parse_known_args()
+    args, _ = parser.parse_known_args()
     with open(args.input_query_file, "r") as fptr:
         query = fptr.read()
     options = beam.options.pipeline_options.PipelineOptions()
