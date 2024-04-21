@@ -54,3 +54,7 @@ gcloud builds submit . \
 cd src
 
 ```
+
+## References
+
+- [Developing I/O connectors for Python](https://beam.apache.org/documentation/io/developing-io-python/#implementing-the-boundedsource-subclass)
