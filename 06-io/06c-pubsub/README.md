@@ -8,9 +8,9 @@
 
 ## blog related
 
-- [EN] []()
-- [TH] []()
-- [Medium] []()
+- [EN] [Let's try: Apache Beam part 6 - instant IO](https://www.bluebirz.net/en/lets-try-apache-beam-part-6/)
+- [TH] [มาใช้ Apache Beam กันเถอะ – ตอนที่ 6 IO สำเร็จรูป](https://www.bluebirz.net/th/lets-try-apache-beam-part-6-th/)
+- [Medium] [Let’s try: Apache Beam part 6 — instant IO](https://medium.com/@bluebirz/lets-try-apache-beam-part-6-instant-io-fae7f79b1801)
 
 ## Flowchart
 
