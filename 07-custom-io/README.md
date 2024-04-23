@@ -1,10 +1,13 @@
-# sample-beam: part 06 IO - case C : Google Cloud Pub/Sub
+# sample-beam: part 07 Custom IO
 
 ## about
 
 - This repo is for demonstrating how to create a Beam IO functions in Python.
+- [Google Cloud Firestore](https://firebase.google.com/docs/firestore) custom IO is chose in this case.
+- It demonstrates a new class inheriting:
+  - `apache_beam.io.iobase.BoundedSource` and
+  - `apache_beam.DoFn`
 - It is written aside blogs described below.
-- This is part D : [Google Cloud Firestore](https://firebase.google.com/docs/firestore).
 
 ## blog related
 
@@ -16,22 +19,20 @@
 
 ```mermaid
 sequenceDiagram
-    actor user as User
-    participant pub1 as First<br>publisher
-    participant sub1 as First<br>subscriber (pull)
+    participant fs1 as Firestore<br>source collection
     actor beam as Apache Beam
-    participant pub2 as Second<br>publisher
-    participant sub2 as Second<br>subscriber (pull)
+    participant fs2 as Firestore<br>destination collection
     autonumber
-    user->>pub1: publish
-    pub1->>sub1: sent
-    beam->>sub1: pull
-    activate sub1
-    sub1->>beam: return messages
-    deactivate sub1
-    note over beam: transform
-    beam->>pub2: publish
-    pub2->>sub2: sent
+    beam->>fs1: list all documents
+    activate fs1
+    fs1->>beam: return all documents
+    deactivate fs1
+    loop write in batch
+      beam->>fs2: commit batch
+      activate fs2
+      fs2->>beam: batch executed
+      deactivate fs2
+    end
 ```
 
 ## How to run
@@ -39,7 +40,8 @@ sequenceDiagram
 ### Prerequisites
 
 1. Require python env.
-2. Install dependencies.
+2. Firestore database and permission to edit.
+3. Install dependencies.
 
 ```shell
 pip install -r requirements.txt
