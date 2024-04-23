@@ -15,15 +15,15 @@ class FireStoreReaderFromCollection(iobase.BoundedSource):
 
     Args:
         target_collection_path_str (str): collection path e.g. `continent/europe/country`
-        database (str, optional): database name. Defaults to "(default)".
         limit (int, optional): max number of documents read. Defaults to 10_000.
+        database (str, optional): database name. Defaults to "(default)".
     """
 
     def __init__(
         self,
         target_collection_path_str: str,
-        database: str = "(default)",
         limit: int = 10_000,
+        database: str = "(default)",
     ):
         self.database = database
         self.target_collection_path_str = target_collection_path_str

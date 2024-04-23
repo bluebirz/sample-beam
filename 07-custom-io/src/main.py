@@ -2,26 +2,22 @@ import apache_beam as beam
 import argparse
 from functions.firestore_writer import FireStoreWriterToCollection
 from functions.firestore_reader import FireStoreReaderFromCollection
-# from functions.test import CountingSource
 
 
 def run_beam():
     parser = argparse.ArgumentParser()
-    # parser.add_argument("--input_file", type=str)
-    # parser.add_argument("--output_file", type=str)
+    parser.add_argument("--source_collection", type=str)
+    parser.add_argument("--destination_collection", type=str)
     args, _ = parser.parse_known_args()
     options = beam.options.pipeline_options.PipelineOptions()
     with beam.Pipeline(options=options) as pipe:
         (
             pipe
-            # | "Read" >> beam.Create([{"key": "bluebirz", "value": {"name": "BBZ"}}])
-            # | "Write" >> beam.ParDo(FireStoreWriterToCollection("EU"))
-            | "Get" >> beam.io.Read(FireStoreReaderFromCollection("EU"))
-            | "Print" >> beam.Map(print)
+            | "Read"
+            >> beam.io.Read(FireStoreReaderFromCollection(args.source_collection))
+            | "Write"
+            >> beam.ParDo(FireStoreWriterToCollection(args.destination_collection))
         )
-    # with beam.Pipeline() as pipeline:
-    #     numbers = pipeline | "ProduceNumbers" >> beam.io.Read(CountingSource(10))
-    #     (numbers | beam.Map(print))
 
 
 if __name__ == "__main__":

@@ -22,7 +22,7 @@ class FireStoreWriterToCollection(beam.DoFn):
         self,
         target_collection_path_str: str,
         database="(default)",
-        max_elements_per_batch=10,
+        max_elements_per_batch=500,
     ):
         self.database = database
         self.target_collection_path_str = target_collection_path_str
