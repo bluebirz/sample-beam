@@ -41,7 +41,8 @@ class FireStoreWriterToCollection(beam.DoFn):
         self.current_batch = []
 
     def finish_bundle(self):
-        self.commit_batch()
+        if self.current_batch:
+            self.commit_batch()
 
     def process(self, element):
         self.current_batch.append(element)
