@@ -11,9 +11,9 @@
 
 ## blog related
 
-- [EN] []()
-- [TH] []()
-- [Medium] []()
+- [EN] [Let's try: Apache Beam part 7 - custom IO](https://www.bluebirz.net/en/lets-try-apache-beam-part-7)
+- [TH] [มาใช้ Apache Beam กันเถอะ – ตอนที่ 7 IO ที่สร้างได้](https://www.bluebirz.net/th/lets-try-apache-beam-part-7-th)
+- [Medium] [Let's try: Apache Beam part 7 - custom IO]()
 
 ## Flowchart
 

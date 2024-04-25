@@ -57,4 +57,4 @@ class FireStoreWriterToCollection(beam.DoFn):
             batch.set(document_ref, elem.get("value"))
 
         batch.commit()
-        self.element_batch = []
+        self.current_batch = []
