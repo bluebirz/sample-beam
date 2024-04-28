@@ -13,7 +13,7 @@
 
 - [EN] [Let's try: Apache Beam part 7 - custom IO](https://www.bluebirz.net/en/lets-try-apache-beam-part-7)
 - [TH] [มาใช้ Apache Beam กันเถอะ – ตอนที่ 7 IO ที่สร้างได้](https://www.bluebirz.net/th/lets-try-apache-beam-part-7-th)
-- [Medium] [Let's try: Apache Beam part 7 - custom IO]()
+- [Medium] [Let's try: Apache Beam part 7 - custom IO](https://medium.com/@bluebirz/lets-try-apache-beam-part-7-custom-io-d310fc291e88)
 
 ## Flowchart
 
@@ -84,3 +84,6 @@ python -m main \
 ## References
 
 - [Developing I/O connectors for Python](https://beam.apache.org/documentation/io/developing-io-python/#implementing-the-boundedsource-subclass)
+- [Firestore: Get all documents in a collection](https://firebase.google.com/docs/firestore/query-data/get-data#get_all_documents_in_a_collection)
+- [Firestore: Batched writes](https://firebase.google.com/docs/firestore/manage-data/transactions#batched-writes)
+- [ParDo with DoFn methods](https://beam.apache.org/documentation/transforms/python/elementwise/pardo/#example-3-pardo-with-dofn-methods)

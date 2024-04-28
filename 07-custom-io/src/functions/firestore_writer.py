@@ -58,3 +58,6 @@ class FireStoreWriterToCollection(beam.DoFn):
 
         batch.commit()
         self.current_batch = []
+
+    def teardown(self):
+        pass
