@@ -22,7 +22,7 @@ class FireStoreWriterToCollection(beam.DoFn):
         self,
         target_collection_path_str: str,
         database="(default)",
-        max_elements_per_batch=10,
+        max_elements_per_batch=500,
     ):
         self.database = database
         self.target_collection_path_str = target_collection_path_str
@@ -41,7 +41,8 @@ class FireStoreWriterToCollection(beam.DoFn):
         self.current_batch = []
 
     def finish_bundle(self):
-        self.commit_batch()
+        if self.current_batch:
+            self.commit_batch()
 
     def process(self, element):
         self.current_batch.append(element)
@@ -56,4 +57,7 @@ class FireStoreWriterToCollection(beam.DoFn):
             batch.set(document_ref, elem.get("value"))
 
         batch.commit()
-        self.element_batch = []
+        self.current_batch = []
+
+    def teardown(self):
+        pass

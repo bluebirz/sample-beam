@@ -31,7 +31,8 @@ sequenceDiagram
 ### Prerequisites
 
 1. Require python env.
-2. Install dependencies.
+2. Google Cloud Storage and permission to edit if needed.
+3. Install dependencies.
 
 ```shell
 pip install -r requirements.txt

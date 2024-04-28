@@ -34,7 +34,8 @@ sequenceDiagram
 ### Prerequisites
 
 1. Require python env.
-2. Install dependencies.
+2. Google BigQuery permission to edit.
+3. Install dependencies.
 
 ```shell
 pip install -r requirements.txt
