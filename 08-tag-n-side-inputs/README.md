@@ -32,12 +32,13 @@ python3 main.py
 
         ```python
         with beam.Pipeline(options=options) as pipe:
-        side_input_content = pipe | beam.io.ReadFromText(side_input_file)
+            side_input_content = pipe | beam.io.ReadFromText(side_input_file)
             (
                 pipe
                 | ...
                 | "insert side input" >> beam.ParDo(SomeFn(), beam.pvalue.AsIter(side_input_content)
-        
+                | ...
+            )
         ```
 
         Need to transform PCollection before used or get the error:
@@ -53,4 +54,11 @@ python3 main.py
                 pipe
                 | ...
                 | "insert side input" >> beam.ParDo(SomeFn(), side_input_content)
+                | ...
+            )
         ```
+
+## References
+
+- [Side input patterns](https://beam.apache.org/documentation/patterns/side-inputs/)
+- [apache_beam.pvalue module](https://beam.apache.org/releases/pydoc/2.29.0/apache_beam.pvalue.html)
