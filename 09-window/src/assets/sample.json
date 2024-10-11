@@ -1,0 +1,17 @@
+[
+  { "alphabet": "A", "timestamp": 1 },
+  { "alphabet": "B", "timestamp": 2 },
+  { "alphabet": "C", "timestamp": 3 },
+  { "alphabet": "D", "timestamp": 4 },
+  { "alphabet": "E", "timestamp": 5 },
+  { "alphabet": "F", "timestamp": 6 },
+  { "alphabet": "G", "timestamp": 7 },
+  { "alphabet": "H", "timestamp": 8 },
+  { "alphabet": "I", "timestamp": 9 },
+  { "alphabet": "J", "timestamp": 10 },
+  { "alphabet": "K", "timestamp": 11 },
+  { "alphabet": "L", "timestamp": 12 },
+  { "alphabet": "M", "timestamp": 13 },
+  { "alphabet": "N", "timestamp": 14 },
+  { "alphabet": "O", "timestamp": 15 }
+]
