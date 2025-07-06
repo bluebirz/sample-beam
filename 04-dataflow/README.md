@@ -7,8 +7,7 @@
 
 ## blog related
 
-- [EN] [Let's try: Apache Beam part 4 - live on Google Dataflow](https://www.bluebirz.net/en/lets-try-apache-beam-part-4)
-- [TH] [มาใช้ Apache Beam กันเถอะ – ตอนที่ 4 ได้เวลา Google Dataflow](https://www.bluebirz.net/th/lets-try-apache-beam-part-4-th)
+- [Blog] [Let's try: Apache Beam part 4 - live on Google Dataflow](https://bluebirz.net/posts/lets-try-apache-beam-part-4/)
 - [Medium] [Let's try: Apache Beam part 4 - live on Google Dataflow](https://medium.com/@bluebirz/lets-try-apache-beam-part-4-live-on-google-dataflow-c89ed62e31f6)
 
 ## How to run

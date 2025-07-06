@@ -8,8 +8,7 @@
 
 ## blog related
 
-- [EN] [Let's try Apache Beam part 5 — transform it with Beam functions](https://www.bluebirz.net/en/lets-try-apache-beam-part-5)
-- [TH] [มาใช้ Apache Beam กันเถอะ – ตอนที่ 5 Beam functions จัดให้แล้ว](https://www.bluebirz.net/th/lets-try-apache-beam-part-5-th)
+- [Blog] [Let's try Apache Beam part 5 — transform it with Beam functions](https://bluebirz.net/posts/lets-try-apache-beam-part-5)
 - [Medium] [Let's try Apache Beam part 5 — transform it with Beam functions](https://medium.com/@bluebirz/lets-try-apache-beam-part-5-transform-it-with-beam-functions-2f2558ba07ce)
 
 ## How to run

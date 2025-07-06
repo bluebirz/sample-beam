@@ -7,8 +7,7 @@
 
 ## blog related
 
-- [EN] [Let's try: Apache Beam part 8 - Tags & Side inputs](https://www.bluebirz.net/en/lets-try-apache-beam-part-8)
-- [TH] [มาใช้ Apache Beam กันเถอะ – ตอนที่ 8 โพย side inputs และการติด tag](https://www.bluebirz.net/th/lets-try-apache-beam-part-8-th)
+- [Blog] [Let's try: Apache Beam part 8 - Tags & Side inputs](https://bluebirz.net/posts/lets-try-apache-beam-part-8)
 - [Medium] [Let's try: Apache Beam part 8 - Tags & Side inputs](https://medium.com/@bluebirz/lets-try-apache-beam-part-8-tags-side-inputs-7598bbaf80fe)
 
 ## How to run

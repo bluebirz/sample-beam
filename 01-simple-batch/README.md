@@ -7,8 +7,7 @@
 
 ## blog related
 
-- [EN] [Let's try: Apache Beam part 1 – simple batch](https://www.bluebirz.net/en/lets-try-apache-beam-part-1)
-- [TH] [มาใช้ Apache Beam กันเถอะ – ตอนที่ 1 สร้าง batch process แบบง่ายๆ](https://www.bluebirz.net/th/lets-try-apache-beam-part-1-th)
+- [Blog] [Let's try: Apache Beam part 1 - simple batch](https://bluebirz.net/posts/lets-try-apache-beam-part-1/)
 - [Medium] [Let's try: Apache Beam part 1 – simple batch](https://medium.com/@bluebirz/lets-try-apache-beam-part-1-simple-batch-523c555ab5ad)
 
 ## How to run
